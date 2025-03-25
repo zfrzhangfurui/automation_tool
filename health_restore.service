@@ -1,0 +1,13 @@
+[Unit]
+Description=health restore app
+After=network.target docker.service
+
+[Service]
+ExecStartPre=/bin/sleep 10
+ExecStart=/bin/bash /home/ubuntu/health_restore.sh
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
